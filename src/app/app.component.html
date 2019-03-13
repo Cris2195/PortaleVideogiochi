@@ -3,8 +3,11 @@
     <h1>
         Welcome to {{ title }}!
     </h1>
+    <app-menu (showSection)="changeSection($event)"></app-menu>
+    <div [ngSwitch]="idSectionToShow">
 
 
+        <app-home *ngSwitch="1"></app-home>
+        <app-game-list *ngSwitchCase="2"></app-game-list>
 
-    <app-game-list></app-game-list>
-</div>
+    </div>

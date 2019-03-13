@@ -1,9 +1,9 @@
 export class MenuItems{
-    id:string;
+    id:number;
     description:String;
     checked : boolean;
 
-    constructor(id,description,checked=false){
+    constructor(id: number,description,checked=false){
         this.id = id;
         this.description = description;
         this.checked = checked;

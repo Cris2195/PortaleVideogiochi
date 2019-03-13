@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { GameItem } from './Items/GameItem';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Injectable({
   providedIn: 'root'

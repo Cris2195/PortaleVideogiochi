@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItems } from '../Items/MenuItems';
 import { HeaderService } from '../header.service';
 
@@ -9,29 +9,24 @@ import { HeaderService } from '../header.service';
 })
 export class MenuComponent implements OnInit {
   menuItems: MenuItems[] = [
-    new MenuItems("1", 'Home', true),
-    new MenuItems("2", 'Lista'),
-    new MenuItems("3", 'Dettaglio'),
-    new MenuItems("4", 'Modifica')
+    new MenuItems(1, 'Home', true),
+    new MenuItems(2, 'Lista'),
+    new MenuItems(3, 'Dettaglio'),
+    new MenuItems(4, 'Modifica')
   ];
-  constructor(private headerService : HeaderService
+  constructor(private headerService: HeaderService
   ) { }
 
 
-
+  @Output('showSection')
+  showSectionEvent: EventEmitter<number> = new EventEmitter();
   ngOnInit() {
   }
-  selectSection(id:string){
-
-    this.menuItems.forEach(item => {
-      if(id == item.id){
-        item.checked = true;
-      }else{
-        item.checked = false;
-      }
-    });
-
-    this.headerService.setSelection(id);
+  showSection(id: number) {
+    for (const item of this.menuItems) {
+      item.checked = item.id === id;
+    }
+    this.showSectionEvent.emit(id);
   }
 
 

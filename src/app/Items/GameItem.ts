@@ -1,6 +1,6 @@
 export class GameItem{
    
-    name : String;
+    private _name : String;
     id : Number;
     description : String;
     type : String;
@@ -9,13 +9,13 @@ export class GameItem{
     releaseDate : Date;
 
     constructor(name:String,id:Number,description?:String,type?:String,rating?:Number,price?:Number,releaseDate?:Date){
-        this.name = name;
+        this._name = name;
         this.id = id;
     }
 
-    getName()
+    get name()
     {
-        return this.name;
+        return this._name;
     }
     
 
