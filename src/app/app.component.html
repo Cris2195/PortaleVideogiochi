@@ -3,3 +3,8 @@
     <h1>
         Welcome to {{ title }}!
     </h1>
+    <div [ngSwitch]="currentSection">
+
+        <app-game-list *ngSwitchCase="'2'"></app-list>
+            <app-menu * ngSwitchCase="'1'"></app-menu>
+    </div>

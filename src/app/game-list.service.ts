@@ -21,10 +21,18 @@ export class GameListService {
    getLista():Array<GameItem>{
      return this.lista;
    }
-   getGame(index):GameItem{
-     return this.lista[index];
+   getGame(id):GameItem{
+     return this.lista.find(item =>{
+       return item.id === id;
+     });
    }
-   setGame(index,game:GameItem):void{
-     this.lista[index] = game;
+   setGame(id,game:GameItem):void{
+    
+
+      
+       
+
+       
+    
    }
 }

@@ -1,5 +1,7 @@
 <p>
-    menu works!
+    <div class="header">
+        <div *ngFor="let item of menuItems" (click)="selectSection(item.id)" [class.selected]="item.selected">{{item.description}}</div>
+    </div>
 
 
 </p>
