@@ -12,6 +12,11 @@ export class GameItem{
         this.name = name;
         this.id = id;
     }
+
+    getName()
+    {
+        return this.name;
+    }
     
 
 

@@ -7,9 +7,8 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 })
 export class GameListService {
     lista : Array<GameItem>  = [
-      new GameItem("World Of Warcraft", 1)
-      new GameItem("Final Fantasy X",2);
-    ]
+      new GameItem("World Of Warcraft", 1),
+      new GameItem("Final Fantasy X",2)    ]
   constructor() {
     
    }
