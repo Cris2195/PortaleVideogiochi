@@ -11,8 +11,7 @@ export class MenuComponent implements OnInit {
   menuItems: MenuItems[] = [
     new MenuItems(1, 'Home', true),
     new MenuItems(2, 'Lista'),
-    new MenuItems(3, 'Dettaglio'),
-    new MenuItems(4, 'Modifica')
+    new MenuItems(3, 'Modifica')
   ];
   constructor(private headerService: HeaderService
   ) { }

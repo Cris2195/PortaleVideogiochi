@@ -1,0 +1,9 @@
+<input [(ngModel)]="searchId" type="number">
+<button (click)="searchGame()">Cerca</button>
+
+<div *ngIf="game">
+    <input [(ngModel)]="game.name">
+    <input [(ngModel)]="game.description">
+
+    <button (click)="change()">Modifica</button>
+</div>
