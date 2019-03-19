@@ -9,6 +9,7 @@ import { GameListService } from './game-list.service';
 import { HomeComponent } from './home/home.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     GameListComponent,
     HomeComponent,
     EditGameComponent,
+    LoginComponent,
   
   ],
   imports: [

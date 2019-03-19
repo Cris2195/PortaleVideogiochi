@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { GameListComponent } from './game-list/game-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
     { path: 'edit', component: EditGameComponent },
     { path: 'game-list', component: GameListComponent },
 
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    {path:'login', component : LoginComponent}
 
 
 
