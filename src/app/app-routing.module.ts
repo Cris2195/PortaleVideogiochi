@@ -7,18 +7,21 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
+
     {
         path: 'home', component: HomeComponent
     },
     { path: 'edit', component: EditGameComponent },
     { path: 'game-list', component: GameListComponent },
+    { path:'', redirectTo: '/login', pathMatch: 'full' },
+   
 
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    {path:'login', component : LoginComponent}
+]
+    
 
 
 
-];
+
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]

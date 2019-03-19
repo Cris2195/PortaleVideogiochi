@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   goToOtherPage(){
     if(this.nome.length >= 2 && this.pass.length >=7){
       this.router.navigate(['/home']);
+      sessionStorage.setItem('user', this.nome);
     }
 
   }
