@@ -6,7 +6,7 @@ import { GameItem } from './Items/GameItem';
 })
 export class GameListService {
   lista: Array<GameItem> = [
-    new GameItem("World Of Warcraft", 1),
+    new GameItem("World Of Warcraft", 1,"Best game evah"),
     new GameItem("Final Fantasy X", 2),
     new GameItem("Fifa 2019", 3)]
 
@@ -24,9 +24,8 @@ export class GameListService {
     return this.lista;
   }
   getGame(id): GameItem {
-    return this.lista.find(item => {
-      return item.id === id;
-    });
+    return this.lista.find(item =>{
+      return item.id === id    })
   }
 
   editGame(game: GameItem) {
@@ -39,6 +38,8 @@ export class GameListService {
     });
   }
 
-  setGame(id, game: GameItem): void {
-  }
+  
+  
+
+  
 }

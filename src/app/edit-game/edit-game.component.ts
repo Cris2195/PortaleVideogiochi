@@ -25,6 +25,7 @@ export class EditGameComponent implements OnInit {
   change(){
   
      this.serviceGame.editGame(this.game)
+     
     
   }
 
