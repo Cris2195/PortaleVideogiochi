@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './authGuard';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { LoginComponent } from './login/login.component';
     GameListComponent,
     HomeComponent,
     EditGameComponent,
-    LoginComponent,
+    LoginComponent
   
   ],
   imports: [
@@ -26,7 +27,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [GameListService],
+  providers: [GameListService,  AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItems } from '../Items/MenuItems';
 import { HeaderService } from '../header.service';
+import { Router } from '@angular/router';
 
 
 
@@ -11,11 +12,12 @@ import { HeaderService } from '../header.service';
 })
 export class MenuComponent implements OnInit {
   menuItems: MenuItems[] = [
-    new MenuItems(1, 'Home', true , '/home'),
-    new MenuItems(2, 'Lista',false, '/game-list'),
-    new MenuItems(3, 'Modifica',false ,'/edit')
+    new MenuItems(1, 'Home', true , '/portale/home'),
+    new MenuItems(2, 'Lista',false, '/portale/game-list'),
+    new MenuItems(3, 'Modifica',false ,'/portale/edit'),
+    
   ]
-  constructor(private headerService: HeaderService
+  constructor(private headerService: HeaderService , private router:Router
   ) { }
 
 
@@ -28,6 +30,11 @@ export class MenuComponent implements OnInit {
       item.checked = item.id === id;
     }
     this.showSectionEvent.emit(id);
+  }
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate(['/login']);
+
   }
 
 

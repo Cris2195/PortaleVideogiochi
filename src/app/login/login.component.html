@@ -1,5 +1,10 @@
 <div>
-    <span>NOME:</span><input [(ngModel)]="nome"><br><br>
+    <span>NOME:</span><input [(ngModel)]="nome" type="text"><br><br>
     <span>PASSWORD:</span><input [(ngModel)]="pass" type="password"><br><br>
     <button (click)="goToOtherPage()">Enter</button>
+    <br><br>
+
+    <div *ngIf="!nome && !pass">
+        <span><h4>Inserisci dati</h4> </span>
+    </div>
 </div>

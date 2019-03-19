@@ -2,3 +2,4 @@
     <li *ngFor="let item of menuItems"><a [routerLink]="[item.endpoint]" routerLinkActive="router-link-active">{{item.description}}</a>
     </li>
 </ul>
+<div><button (click)="logout()">Logout</button></div>

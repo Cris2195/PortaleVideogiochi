@@ -4,16 +4,28 @@ import { HomeComponent } from './home/home.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { LoginComponent } from './login/login.component';
+import { componentFactoryName } from '@angular/compiler';
+import { AuthGuard } from './authGuard';
+
 
 
 const routes: Routes = [
+    {path:'login', component:LoginComponent, canActivate:[AuthGuard]},
 
-    {
-        path: 'home', component: HomeComponent
-    },
-    { path: 'edit', component: EditGameComponent },
-    { path: 'game-list', component: GameListComponent },
-    { path:'', redirectTo: '/login', pathMatch: 'full' },
+    {path: 'portale', canActivateChild:[AuthGuard], children:[
+        {
+            path: 'home', component: HomeComponent ,
+        },
+        { path: 'edit', component: EditGameComponent },
+        { path: 'game-list', component: GameListComponent }    
+        
+    ]},
+
+   
+
+
+
+    {path:'', redirectTo:'/login', pathMatch:"full"}
    
 
 ]

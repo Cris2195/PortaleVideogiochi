@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+   nome : string;
   ngOnInit() {
+    if(sessionStorage.length>0)
+    this.nome = sessionStorage.getItem('user');
+    
   }
 
 }

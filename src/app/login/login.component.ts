@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Router} from '@angular/router';
-import { checkAndUpdateBinding } from '@angular/core/src/view/util';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +8,7 @@ import { checkAndUpdateBinding } from '@angular/core/src/view/util';
 })
 export class LoginComponent implements OnInit {
 
-
+  
   nome: string;
   pass: string;
   constructor(private router :Router ) { }
@@ -19,11 +19,15 @@ export class LoginComponent implements OnInit {
 
 
 
-  goToOtherPage(){
+  goToOtherPage() :void  {
     if(this.nome.length >= 2 && this.pass.length >=7){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/portale/home']);
       sessionStorage.setItem('user', this.nome);
+     
+     
     }
+  
+  
 
   }
 
